@@ -18,17 +18,23 @@ def root():
 def auth():
     user = request.form['user']
     passw = request.form['pw']
-    if request.form['name'] == login:
-        if login.authenticate( user, passw):
+    print request.form
+    if request.form['type'] == 'Login':
+        print 'Login'
+        print login.authenticate( user, passw )
+        if login.authenticate( user, passw ):
             session['user'] = user
             flash('Successful Login!')
             return redirect( url_for('welcome') )
         else:
             flash("Invalid username or password. Try Again.")
     else:
-        login.register(user, passw)
-        flash('Successful Registration')
-        return redirect(url_for('root'))
+        print 'Register'
+        if login.register(user, passw):
+            flash('Successful Registration')
+        else:
+            flash('User already exists')
+    return redirect(url_for('root'))
 
 @story_site.route('/welcome')
 def welcome():
@@ -49,9 +55,8 @@ if __name__ == '__main__':
     tables_exist = os.path.isfile(db)
     db = sqlite3.connect(db)
     c = db.cursor()
-    if not tables_exist:
-        c.execute("CREATE TABLE users (username TEXT PRIMARY KEY, hashed_pass TEXT, edited_stories TEXT);")
-        c.execute("CREATE TABLE stories (id INTEGER PRIMARY KEY, title TEXT, CONTENT TEXT, revision TEXT);")
+    c.execute("CREATE TABLE IF NOT EXISTS users (username TEXT PRIMARY KEY, hashed_pass TEXT, edited_stories TEXT);")
+    c.execute("CREATE TABLE IF NOT EXISTS stories (id INTEGER PRIMARY KEY, title TEXT, CONTENT TEXT, revision TEXT);")
 
     story_site.debug = True
     story_site.run()

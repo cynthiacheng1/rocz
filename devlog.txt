@@ -2,3 +2,6 @@ adeeburR -- 2017-10-23 19:07:38
 created devlog
 added basic login functionality (without databases)
 
+adeeburR -- 2017-10-24 19:15:05
+incorporated database into login and register
+
