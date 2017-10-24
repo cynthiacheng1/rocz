@@ -1,7 +1,15 @@
-adeeburR -- 2017-10-23 19:07:38
-created devlog
-added basic login functionality (without databases)
+zaiaJ -- 2017-10-23 19:48:22
 
+Added part of the backend for the homepage
+Edited the main file to properly create/edit database as appropriate
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 adeeburR -- 2017-10-24 19:15:05
+
 incorporated database into login and register
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+adeeburR -- 2017-10-23 19:07:38
+
+created devlog
+added basic login functionality (without databases)
