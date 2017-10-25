@@ -9,16 +9,21 @@ adeeburR -- 2017-10-24 19:15:05
 incorporated database into login and register
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-zaiaJ -- 2017-10-24 19:48:22
+jakeZ -- 2017-10-24 19:48:22
 
 Added part of the backend for the homepage
 Edited the main file to properly create/edit database as appropriate
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-olevskyL -- 2017-10-24 20:15:25
+leviO -- 2017-10-24 20:15:25
 
 Added functions to allow for creating and editing new stories
 User edit history reflects newly created and edited stories
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+leviO -- 2017-10-25 14:14:44
+
+Updated functions and changed syntax to conform to conventions established
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 © 2017 GitHub, Inc.
