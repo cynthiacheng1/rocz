@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, session, redirect, url_for, flash
-import os
+import os, sqlite3
 
 users = { "user" : "password", "user2" : "password" } # replace with database
 
@@ -53,5 +53,17 @@ def logout():
                                
 
 if __name__ == '__main__':
+    db = "database.db" #Starts as string becomes db object
+    tables_exist = os.path.isfile(db)
+    db = sqlite3.connect(db)
+    c = db.cursor()
+    if not tables_exist:
+        c.execute("CREATE TABLE users (username TEXT PRIMARY KEY, hashed_pass TEXT, edited_stories TEXT);")
+        c.execute("CREATE TABLE stories (id INTEGER PRIMARY KEY, title TEXT, CONTENT TEXT, revision TEXT);")
+
     story_site.debug = True
-story_site.run()
+    story_site.run()
+
+    db.commit()
+    db.close()
+    
