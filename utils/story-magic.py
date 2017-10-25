@@ -6,10 +6,8 @@ m = '../database.db'
 def view_edit_history(user):
     db = sqlite3.connect(m)
     c = db.cursor()
-    edit_history = c.execute('SELECT edited_stories FROM users WHERE username="%s"'%(user))
-    history = []
-    for story_string in edit_history:
-        history = eval(story_string[0])
+    edit_history = c.execute('SELECT edited_stories FROM users WHERE username="%s"'%(user)).fetchall()
+    history = eval(edit_history[0][0])
     db.commit()
     db.close()
     return history
@@ -50,12 +48,10 @@ def editStory(user, id_num, new_cont):
     
     update_edit_history(user, id_num)
     
-    content = c.execute('SELECT CONTENT FROM stories WHERE id=%d'%(id_num))
-    updated_cont = ''
-    for old_content in content:
-        updated_cont = old_content[0]
-        updated_cont += '\n' + new_cont
-    c.execute('UPDATE stories SET CONTENT = "%s" WHERE id=%d'%(updated_cont, id_num))
+    content = c.execute('SELECT CONTENT FROM stories WHERE id=%d'%(id_num)).fetchall()
+    updated_cont = content[0][0]
+    updated_cont += '\n' + new_cont
+    c.execute('UPDATE stories SET CONTENT = "%s" content id=%d'%(updated_cont, id_num))
     c.execute('UPDATE stories SET revision = "%s" WHERE id=%d'%(new_cont, id_num))
     db.commit()
     db.close()

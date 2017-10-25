@@ -50,7 +50,7 @@ if __name__ == '__main__':
     db = sqlite3.connect(db)
     c = db.cursor()
     c.execute("CREATE TABLE IF NOT EXISTS users (username TEXT PRIMARY KEY, hashed_pass TEXT, edited_stories TEXT);")
-    c.execute("CREATE TABLE IF NOT EXISTS stories (id INTEGER PRIMARY KEY, title TEXT, CONTENT TEXT, revision TEXT);")
+    c.execute("CREATE TABLE IF NOT EXISTS stories (id INTEGER PRIMARY KEY, title TEXT, content TEXT, revision TEXT);")
 
     story_site.debug = True
     story_site.run()
