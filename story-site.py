@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, session, redirect, url_for, f
 from utils import login
 import os, sqlite3
 
-users = { "user" : "password", "user2" : "password" } # replace with database
-
 story_site = Flask(__name__)
 story_site.secret_key = os.urandom(64)
 
@@ -20,8 +18,6 @@ def auth():
     passw = request.form['pw']
     print request.form
     if request.form['type'] == 'Login':
-        print 'Login'
-        print login.authenticate( user, passw )
         if login.authenticate( user, passw ):
             session['user'] = user
             flash('Successful Login!')
@@ -29,8 +25,7 @@ def auth():
         else:
             flash("Invalid username or password. Try Again.")
     else:
-        print 'Register'
-        if login.register(user, passw):
+        if login.register( user, passw):
             flash('Successful Registration')
         else:
             flash('User already exists')
@@ -52,7 +47,6 @@ def logout():
 
 if __name__ == '__main__':
     db = "database.db" #Starts as string becomes db object
-    tables_exist = os.path.isfile(db)
     db = sqlite3.connect(db)
     c = db.cursor()
     c.execute("CREATE TABLE IF NOT EXISTS users (username TEXT PRIMARY KEY, hashed_pass TEXT, edited_stories TEXT);")
