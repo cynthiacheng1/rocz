@@ -15,3 +15,10 @@ Added part of the backend for the homepage
 Edited the main file to properly create/edit database as appropriate
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+olevskyL -- 2017-10-24 20:15:25
+
+Added functions to allow for creating and editing new stories
+User edit history reflects newly created and edited stories
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+© 2017 GitHub, Inc.
