@@ -5,10 +5,7 @@ Story Site
 {% endblock %}
 
 {% block body %}
-<h2>Welcome {{ user }}</h2>
-<form method="POST" action="/logout">
-  <input type="submit" name="logout" value="Log Out">
-</form>
+<h4>Welcome {{ user }}</h4>
 
 <br>
 
@@ -16,14 +13,17 @@ Story Site
   <input type="submit" value="Create New Story">
 </form>
 
+
+
 <br>
+
 
 <h3>New Stories</h3>
 {% for tuple in stories %}
 <form method="POST" action="/edit">
   <input type="hidden" name="storyid" value="{{ tuple[0] }}">
   <input type="hidden" name="story" value="{{ tuple[1] }}">
-  <input type="submit" value="{{ tuple[0] }}: {{ tuple[1] }}">
+  <input type="submit" value="{{ tuple[1] }}">
 </form>
 <br>
 {% endfor %}
@@ -33,9 +33,15 @@ Story Site
 <form method="POST" action="/view">
   <input type="hidden" name="storyid" value="{{ tuple[0] }}">
   <input type="hidden" name="story" value="{{ tuple[1] }}">
-  <input type="submit" value="{{ tuple[0] }}: {{ tuple[1] }}">
+  <input type="submit" value="{{ tuple[1] }}">
 </form>
 <br>
 {% endfor %}
+
+<p>
+  <form method="POST" action="/logout">
+    <input type="submit" name="logout" value="Log Out">    
+  </form>
+</p>
 
 {% endblock %}
