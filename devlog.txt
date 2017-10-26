@@ -35,4 +35,3 @@ adeeburR -- 2017-10-25 22:10:08
 created new, edit, and view pages
 and made a basic front end
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-© 2017 GitHub, Inc.
