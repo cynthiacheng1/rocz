@@ -26,4 +26,9 @@ leviO -- 2017-10-25 14:14:44
 Updated functions and changed syntax to conform to conventions established
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jakeZ -- 2017-10-25 14:14:55
+
+updated story methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 © 2017 GitHub, Inc.
