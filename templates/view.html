@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+New Story Creation
+{% endblock %}
+
+{% block body %}
+<h1>{{ storyid }}: {{ story }}</h1>
+<br>
+<h3>Content</h3>
+<p>{{ content }}</p>
+
+<a href="/welcome">Return to Main Page</a>
+{% endblock %}

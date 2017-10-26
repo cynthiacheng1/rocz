@@ -19,20 +19,26 @@ def get_edited_stories(user):
     db = sqlite3.connect(data)
     c = db.cursor()
     edited = find_edits(user)
+    remove = []
     L = c.execute("SELECT * FROM stories;").fetchall()
     for each in L:
-        if not each[0] in edited:
-            L.remove(each)
+        if each[0] not in edited:
+            remove.append(each)
+    for each in remove:
+        L.remove(each)
     return L[::-1]
 
 def get_unedited_stories(user):
     db = sqlite3.connect(data)
     c = db.cursor()
     edited = find_edits(user)
+    remove = []
     L = c.execute("SELECT * FROM stories;").fetchall()
     for each in L:
         if each[0] in edited:
-            L.remove(each)
+            remove.append(each)
+    for each in remove:
+        L.remove(each)
     return L[::-1]
 
 

@@ -1,11 +1,11 @@
 import sqlite3, hashlib
 f = 'database.db'
 
-def get_hashed_password(passw):
-    return hashlib.sha256(passw + 'secret key').hexdigest()
+def get_hashed_password(user, passw):
+    return hashlib.sha256(passw + user).hexdigest()
 
 def register( user, passw ):
-    hashed = get_hashed_password(passw)
+    hashed = get_hashed_password(user, passw)
     db = sqlite3.connect(f)
     user_info = db.cursor().execute('SELECT username FROM users WHERE username = "%s";' % ( user )).fetchall()
     if len(user_info) != 0:
@@ -16,7 +16,7 @@ def register( user, passw ):
     return True
 
 def authenticate(user, passw):
-    hashed = get_hashed_password(passw)
+    hashed = get_hashed_password(user, passw)
     db = sqlite3.connect(f)
     user_info = db.cursor().execute('SELECT username, hashed_pass FROM users WHERE username = "%s";' % ( user )).fetchall()
     db.close()

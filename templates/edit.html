@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+New Story Creation
+{% endblock %}
+
+{% block body %}
+<h1>Story Addition</h1>
+<br>
+
+<form method="POST" action="/update">
+  <h3>{{ storyid }}: {{ story }}</h3>
+  <h5>Last revision</h5>
+  <p>{{ revision }}</p>
+  <br>
+  <h3>Content</h3>
+  <textarea rows="10" cols="50" name="content"></textarea>
+  <br>
+  <input type="hidden" name="storyid" value="{{ storyid }}">
+  <input type="submit" value="Submit Addition" name="type">
+</form>
+{% endblock %}
