@@ -34,4 +34,14 @@ adeeburR -- 2017-10-25 22:10:08
 
 created new, edit, and view pages
 and made a basic front end
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jakeZ -- 2017-10-26 14:30:55
+
+Fixed some miscellaneous problems with displaying stories.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jakeZ -- 2017-10-27 11:43:55
+
+Added README
+Fixed login allowing for empty fields.
