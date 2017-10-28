@@ -1,0 +1,4 @@
+There were no significant changes from the original design.
+We did add a template to spruce up the CSS of the website, however the instructions of the design doc stayed pretty stagnant.
+We all had experience working with databases and websites, therefore knew previous techniques we knew would work. Editing was not necessary in the creation of our website. 
+The jobs tended to bleed into one another; many of us worked on aspects that were not assigned to us.
